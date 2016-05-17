@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
   spec.name                   = "librato-alerts"
-  spec.version                = "1.0.0"
-  spec.date                   = "2016-04-23"
+  spec.version                = "1.0.1"
+  spec.date                   = "2016-05-17"
   spec.summary                = "Interacts with Librato's Alerts API."
   spec.description            = "Interacts with Librato's Alerts API."
   spec.authors                = ["Juan Guerrero"]
@@ -13,6 +13,4 @@ Gem::Specification.new do |spec|
   spec.licenses               = ["MIT"]
 
   spec.add_runtime_dependency     "nestful"
-
-  spec.add_development_dependency "rspec", "~> 3.0"
 end

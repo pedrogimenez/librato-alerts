@@ -13,28 +13,28 @@ module LibratoAlerts
   end
 
   def all
-    get("alerts")[:alerts]
+    request(method: :get)[:alerts]
   end
 
   def enable(alert_id)
-    put("alerts/#{alert_id}", active: true)
+    request(
+      endpoint: "/#{alert_id}",
+      method: :put,
+      active: true)
   end
 
   def disable(alert_id)
-    put("alerts/#{alert_id}", active: false)
+    request(
+      endpoint: "/#{alert_id}",
+      method: :put,
+      active: false)
+  end
+
   end
 
   private
 
-  def get(endpoint, parameters = {})
-    request(endpoint, :get, parameters)
-  end
-
-  def put(endpoint, parameters = {})
-    request(endpoint, :put, parameters)
-  end
-
-  def request(endpoint, method, parameters)
+  def request(endpoint: "", method:, **parameters)
     options = {
       method: method,
       params: default_parameters.merge(parameters),
@@ -44,7 +44,7 @@ module LibratoAlerts
       format: :json
     }
 
-    request = Nestful::Request.new("#{API_HOST}/#{endpoint}", options)
+    request = Nestful::Request.new("#{API_HOST}/alerts#{endpoint}", options)
 
     response = request.execute
 
