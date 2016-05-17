@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name                   = "librato-alerts"
-  spec.version                = "1.0.1"
+  spec.version                = "1.1.0"
   spec.date                   = "2016-05-17"
   spec.summary                = "Interacts with Librato's Alerts API."
   spec.description            = "Interacts with Librato's Alerts API."

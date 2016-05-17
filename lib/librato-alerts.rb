@@ -30,6 +30,12 @@ module LibratoAlerts
       active: false)
   end
 
+  def delete(alert_id)
+    request(
+      endpoint: "/#{alert_id}",
+      method: :delete)
+  end
+
   private
 
   def request(endpoint: "", method:, **parameters)

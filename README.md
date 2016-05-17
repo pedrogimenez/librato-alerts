@@ -19,4 +19,6 @@ LibratoAlerts.all
 LibratoAlerts.disable(1) # => nil
 
 LibratoAlerts.enable(1) # => nil
+
+LibratoAlerts.delete(1) # => nil
 ```
